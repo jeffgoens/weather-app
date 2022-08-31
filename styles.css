@@ -48,3 +48,26 @@ a {
     background-color: black;
     padding: 5px;
 } */
+
+#test {
+    color: red;
+}
+
+.box {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn);
+}
+
+body {
+    background-color: pink;
+}
+
+/* keeps background color until screen becomes less than 30em */
+@media (min-width: 30em) {
+    body {
+        background-color: burlywood;
+    }
+}
