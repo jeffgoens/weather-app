@@ -1,17 +1,20 @@
-let car = {
-    model: 'Toyota',
-    type: 'Camry',
-    exteriorColor: 'silver',
-    interiorColor: 'gray',
-    engine: ['4cyl', 'V6', 'hybrid'],
+let randomAdice = [];
+
+function getRandomAdvice () {
+fetch('https://api.adviceslip.com/advice')
+    .then((response) => response.json())
+    // .then((data) => console.log(data.slip.advice));
+    .then((data) => {
+        let fact1 = data.slip.advice;
+        console.log(fact1);
+        document.getElementById("hello").innerHTML = fact1
+    } )
+
 }
 
-car.engine.push('water')
+getRandomAdvice ();
+// console.log(data);
 
-
-console.log(car);
-console.log(car.model);
-console.log(car.engine);
-console.log(car.engine[0]);
-
-
+// function showAdice () {
+//     document.getElementById("hello").innerHTML = getRandomAdvice ();
+// }
