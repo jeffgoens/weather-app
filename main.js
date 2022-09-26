@@ -1,17 +1,10 @@
-let car = {
-    model: 'Toyota',
-    type: 'Camry',
-    exteriorColor: 'silver',
-    interiorColor: 'gray',
-    engine: ['4cyl', 'V6', 'hybrid'],
+let randomAdice = [];
+
+function getRandomAdvice () {
+fetch('https://api.adviceslip.com/advice')
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
 }
 
-car.engine.push('water')
-
-
-console.log(car);
-console.log(car.model);
-console.log(car.engine);
-console.log(car.engine[0]);
-
-
+getRandomAdvice ();
