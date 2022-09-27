@@ -9,6 +9,7 @@
 
 
 ```
+
 INPUTS:
  Zipcode field --> user input
   
@@ -20,7 +21,7 @@ OUTPUTS:
 
 ACTIONS:
  Get Weather --> button
-  
+ 
 ```
 
 ### INIT:
