@@ -26,7 +26,7 @@ ACTIONS:
 
 ### INIT:
 ```
-GET div by id
+GET div by id main from main HTML page
 ASSIGN container class (classlist)
 CREATE static elements
  - header

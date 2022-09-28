@@ -1,4 +1,7 @@
 const apiKey = '31b7dec44d4017661c9be2f158f9ae70';
+const mainContainer = document.getElementById('main');
+
+
 
 
 async function getWeatherData() {
@@ -16,17 +19,21 @@ getWeatherData();
 function initPage () {
     let headerText = document.createElement('h1');
     headerText.innerText = 'Weather App';
-    document.body.appendChild(headerText);
+    mainContainer.appendChild(headerText);
     headerText.id = 'headerId';
 
     let zipcodeInput = document.createElement('input');
     zipcodeInput.placeholder = 'Enter 5-digit zipcode';
-    document.body.appendChild(zipcodeInput);
+    mainContainer.appendChild(zipcodeInput);
     zipcodeInput.id = 'zipcodeId';
 
     let weatherButton = document.createElement('button');
     weatherButton.innerHTML = "Get Weather";
-    document.body.appendChild(weatherButton);
+    mainContainer.appendChild(weatherButton);
+
+    let cityCard = document.createElement('div');
+    cityCard.setAttribute('class', 'card');
+    mainContainer.appendChild(cityCard);
 
 }
 
