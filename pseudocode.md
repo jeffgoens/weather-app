@@ -24,19 +24,13 @@ ACTIONS:
  
 ```
 
-### INIT:
-```
-GET div by id main from main HTML page
-ASSIGN container class (classlist)
-CREATE static elements
- - header
- - zipcode input
- - submit button
-APPEND to div
-  
-```
+### Event Listeners:
+- Get Weather button
+  - Calls zipcodeValidtion()
+  - If zipcode is valid, calls getWeatherData()
 
-### FUNCTIONS:
+
+### Functions:
 - CREATE zipcodeValidation()
     - IF zipcode length is equal to 5 and is not a number return true
     - ELSE return false and create error message
