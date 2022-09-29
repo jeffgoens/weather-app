@@ -17,7 +17,7 @@ OUTPUTS:
  City --> API
  Temperature --> API
  Condition --> API
- Other Info --> Upload image
+ Other Info --> API
 
 ACTIONS:
  Get Weather --> button
@@ -36,7 +36,18 @@ APPEND to div
   
 ```
 
-### FUNCTION:
+### FUNCTIONS:
+- CREATE zipcodeValidation()
+    - IF zipcode length is equal to 5 and is not a number return true
+    - ELSE return false and create error message
+
+- CREATE getWeatherData()
+    - GET data with async await method
+    - IF response is good, capture data
+    - IF response errors, catch error with console log
+
+- CREATE currentState()
+    - GET API response data, parse needed values using dot notation and assign to variables    
  
 ```js
 
