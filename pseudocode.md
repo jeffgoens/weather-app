@@ -38,25 +38,23 @@ ACTIONS:
 - CREATE getWeatherData()
     - GET data with async await method
     - IF response is good, capture data
-    - IF response errors, catch error with console log
+    - IF response errors, catch error with console log and create error message
 
 - CREATE currentState()
     - GET API response data, parse needed values using dot notation and assign to variables    
  
-```js
 
- 
- ```
- 
- 
  ### START:
  ```
-
+ zipcodeValidation()
+ getWeatherData()
+ addEventListener 
+ currentState()
  
  ```
  
  
  ### END:
  ```
- 
+ addEventlistener - clears zipcode field
  ```
