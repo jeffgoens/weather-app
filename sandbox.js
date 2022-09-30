@@ -13,9 +13,7 @@ let imageIcon = document.getElementById("image");
 
 
 
-// function that validates the zipcode and if not valid, returns an alert
-
-const zipcodeValidation = function () {
+const zipcodeValidation = function () {                                      // function that validates the zipcode string value and if not valid, returns an alert
     zipcode = document.getElementById("zipcodeInput").value;
     if (zipcode.length === 5 && isNaN(zipcode) === false) {
         console.log("valid zip string")
@@ -27,8 +25,7 @@ const zipcodeValidation = function () {
 };
 
 
-
-async function getWeatherData() {
+async function getWeatherData() {                                             // function that calls the API data, returns error message if zipcode is not valid(found), populates current state              
     try {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=${apiKey}&units=imperial`);
         console.log(response.data);
@@ -41,17 +38,15 @@ async function getWeatherData() {
     }
 }
 
-// add event listener that runs the zipcodeValidation function and if it passes, then runs the getWeatherData function API call
 
-getWeatherButton.addEventListener("click", () => {
-    if (zipcodeValidation()) {
+getWeatherButton.addEventListener("click", () => {                            // add event listener that runs the zipcodeValidation function and if it passes, 
+    if (zipcodeValidation()) {                                                // runs the getWeatherData function API call
         getWeatherData();
     }
 });
 
-// function that updates the current state of the display
 
-const currentState = function (data) {
+const currentState = function (data) {                                        // function that updates the current state of the display
     let temperature = Math.round(data.main.temp);
     let city = data.name;
     let celsius = Math.round((temperature - 32) / 1.8);
@@ -60,18 +55,7 @@ const currentState = function (data) {
     let icon = data.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
 
-    // initial page view before weatherData is returned and after a refresh
-
-    // mainHeader.display = "block"; // fills the entire line and nothing can be displayed to the left or right side
-    // zipcodeInput.display = "block";
-    // getWeatherButton.style.display = "block";
-
-    // take values and populate into the display
-
-    // cityText.style.display = "block";
     cityText.textContent = city;
-    // temperatureText.style.display = "block";
-    // currentCondition.style.display = "block";
     conditions.textContent = condition;
     kelvinText.textContent = `${kelvin} °K`;
     fahreneheitText.textContent = `${temperature} °F`;
@@ -80,7 +64,7 @@ const currentState = function (data) {
 
 };
 
-document.getElementById("zipcodeInput").addEventListener("click", () =>{
-zipcodeInput.value = ""
+document.getElementById("zipcodeInput").addEventListener("click", () => {      // function that clears the zipcode field when clicked inside input box
+    zipcodeInput.value = ""
 
 });
