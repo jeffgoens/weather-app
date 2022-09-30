@@ -32,10 +32,8 @@ async function getWeatherData() {                                             //
         let data = response.data;
         currentState(data)
     } catch {
-        alert("You have entered an INVALID ZIPCODE. Please try again.")
         console.error(error);
-        alert("You have entered an INVALID ZIPCODE. Please try again.")
-    }
+        
 }
 
 
